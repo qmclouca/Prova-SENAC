@@ -1,4 +1,4 @@
-import React from 'react'
+import XSaladaIimage from './assets/X-Salada.png'
 import ProductCard from './Components/ProductCard/ProductCard'
 import './App.css'
 
@@ -7,7 +7,7 @@ const App = () => {
     <>
       <div>
         <ProductCard
-          image="https://assets.unileversolutions.com/recipes-v2/106684.jpg"
+          image={XSaladaIimage}
           description="Esse é um delicioso X-Salada"
           whereToGo="Adicionar"
           cardTitle="X-Salada"
