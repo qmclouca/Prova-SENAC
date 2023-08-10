@@ -1,5 +1,6 @@
 import XSaladaImage from './assets/X-Salada.png'
 import XBaconImage from './assets/X-Bacon.jpg'
+import TFrios from './assets/tabua de frios.jpg'
 import ProductCard from './Components/ProductCard/ProductCard'
 import './App.css'
 
@@ -18,6 +19,12 @@ const App = () => {
         description="Esse é um delicioso X-Bacon"
         whereToGo="Adicionar"
         cardTitle="X-Bacon"
+      />
+       <ProductCard
+        image={TFrios}
+        description="Essa é para a turma toda"
+        whereToGo="Adicionar"
+        cardTitle="X-Salada"
       />
     </div>
     </>
