@@ -3,6 +3,7 @@ import XBaconImage from './assets/X-Bacon.jpg'
 import TFrios from './assets/tabua de frios.jpg'
 import ProductCard from './Components/ProductCard/ProductCard'
 import './App.css'
+import GitHubUser from './Components/GitHubUsersProps/GitHubUser'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         whereToGo="Adicionar"
         cardTitle="X-Salada"
       />
+      <GitHubUser username="qmclouca" />
     </div>
     </>
   )
