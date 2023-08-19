@@ -1,10 +1,7 @@
-import XSaladaImage from '../../assets/X-Salada.png'
-import XBaconImage from '../../assets/X-Bacon.jpg'
-import TFrios from '../../assets/tabua de frios.jpg'
-import ProductCard from '../ProductCard/ProductCard'
-import GitHubUser from '../GitHubUsersProps/GitHubUser'
-import { Route, Routes } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import XSaladaImage from '../assets/X-Salada.png'
+import XBaconImage from '../assets/X-Bacon.jpg'
+import TFrios from '../assets/tabua de frios.jpg'
+import ProductCard from '../Components/ProductCard/ProductCard'
 
 const PageCards = () => {
     return (
@@ -27,9 +24,7 @@ const PageCards = () => {
             description="Essa é para a turma toda"
             whereToGo="Adicionar"
             cardTitle="X-Salada"
-          />
-          <Link to="/github-user">GitHub User</Link>
-          <GitHubUser username="qmclouca" />
+          />          
         </div>      
       </>      
     )

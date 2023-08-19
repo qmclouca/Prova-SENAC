@@ -1,23 +1,15 @@
 import './App.css'
-import React from 'react';
-import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
-import PageCards from './Components/PageCards/PageCards';
-import GitHubUser from './Components/GitHubUsersProps/GitHubUser';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import PageCards from './Pages/PageCards';
+import PageAutor from './Pages/PageAutor';
 const App = () => {
   return (
-    <BrowserRouter>      
-          <Routes>
-            <Route path="/" element={<PageCards />}>
-              <h1>teste base</h1>
-              <PageCards></PageCards>
-            </Route>
-            <Route path="/github-user">
-              <h1>teste git</h1>
-              <GitHubUser username="qmclouca" />
-            </Route>            
-          </Routes>           
-    </BrowserRouter>
-      
+    <Router>      
+      <Routes>
+        <Route path="/" element={<PageCards />}/>        
+        <Route path="/autor" element={<PageAutor/>}/>          
+      </Routes>           
+    </Router>      
   )
 }
 
