@@ -10,6 +10,7 @@ const GitHubUser: React.FC<GitHubUserProps> = ({ username }) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
+  
   useEffect(() => {
     fetchGitHubUser(username)
       .then(response => {
