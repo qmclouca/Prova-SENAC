@@ -1,4 +1,4 @@
-import GitHubUser from '../Components/GitHubUsersProps/GitHubUser';
+import GitHubUser from "../../Components/GitHubUsersProps/GitHubUser";
 
 const PageAutor = () => {
     return (
