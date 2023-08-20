@@ -20,6 +20,11 @@
     box-shadow: #72a24d 5px 5px 5px 7px;
     border-style: ridge;    
 }
+
+.card {
+  flex: 1 1 120px;
+  margin: 5px;
+}
   
 .App {
     color: #72a24d;
