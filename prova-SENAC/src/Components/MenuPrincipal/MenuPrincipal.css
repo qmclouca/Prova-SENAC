@@ -1,19 +1,18 @@
-.logox{    
-    flex: 1 1 120px;
-    
-}
-.menu_logo{
+.menu_container {
     display: flex;
-    flex-flow: row wrap;
-    flex: 1 1 120px;
-}
-.menu_name{
-    display: flex;
-    flex-flow: row wrap;
-    flex: 1 1 120px;
-}
-.namex{    
-    flex: 1 1 120px;
-    margin: 5px;
-   
-}
+    align-items: center; /* Centraliza verticalmente os itens */
+  }
+  
+  .logox {
+    max-width: 120px; /* Limita a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+  
+  .menu_name {
+    margin-left: 10px; /* Espaçamento entre logo e nome */
+  }
+  
+  .namex {
+    margin: 0; /* Remove as margens padrão do h1 */
+  }
+  
