@@ -10,14 +10,19 @@ interface MenuPrincipalProps {
 
 const MenuPrincipal: React.FC<MenuPrincipalProps> = ({name, logoUrl}) => {
 return(
+   
     <>
+  <div className="menu_container">
     <div className="menu_logo">
-        <img className="logox" src={logoUrl} alt="Logo" />
+      <img className="logox" src={logoUrl} alt="Logo" />
     </div>
     <div className="menu_name">
-        <h1 className="namex">{name}</h1>
+      <h1 className="namex">{name}</h1>
     </div>
-    </>
+  </div>
+</>
+
+   
 );
 };
 
