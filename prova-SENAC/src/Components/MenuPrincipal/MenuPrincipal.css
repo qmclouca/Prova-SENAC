@@ -1,0 +1,19 @@
+.logox{    
+    flex: 1 1 120px;
+    
+}
+.menu_logo{
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 120px;
+}
+.menu_name{
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 120px;
+}
+.namex{    
+    flex: 1 1 120px;
+    margin: 5px;
+   
+}
