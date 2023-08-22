@@ -5,7 +5,7 @@ import MenuPrincipal from '../../Components/MenuPrincipal/MenuPrincipal';
 const AdminPage = () => {
     return (
         <>
-            <MenuPrincipal name='Teste de Rota' logoUrl={Logo}/>
+            <MenuPrincipal name='Teste de Rota' logoUrl={Logo} />
         </>
     )
 }
