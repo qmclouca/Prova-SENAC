@@ -13,6 +13,7 @@ const MenuPrincipal: React.FC<MenuPrincipalProps> = ({name, logoUrl}) => {
   };
   return(
     <>
+    <div className="menu_bar">
   <div className="menu_container">
     <div className="menu_logo">
       <img className="logox" src={logoUrl} alt="Logo" />
@@ -22,6 +23,7 @@ const MenuPrincipal: React.FC<MenuPrincipalProps> = ({name, logoUrl}) => {
     </div>
     <Login
        onLogin={handleLogin}></Login>
+  </div>
   </div>
 </>
 );
