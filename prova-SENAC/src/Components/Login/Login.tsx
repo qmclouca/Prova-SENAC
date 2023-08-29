@@ -19,22 +19,21 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
 
     return (
         <>
-        <div>
-            <div>
-                <label>Usuário</label>
+        <div className="LoginForm">
+            <div className="LoginInputs">
+                <label className="userLabel">Usuário</label>
                 <input
                     type="text"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}/>
-            </div>
-            <div>
-                <label>Senha</label>
+            
+                <label className="senhaLabel">Senha</label>
                 <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}/>
             </div>
-            <button onClick={handleLogin}>Entrar</button>
+            <button className="buttonMargin" onClick={handleLogin}>Entrar</button>
         </div>
         </>
     );
