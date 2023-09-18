@@ -44,4 +44,7 @@ export default apiService;
 export const fetchGitHubUser = (username: string): Promise<AxiosResponse<any>> => {
     return apiClient.get<any>(`https://api.github.com/users/${username}`);
   };
+export const fetchUser = (username: string): Promise<AxiosResponse<any>> => {
+    return apiClient.get<any>(`http://localhost:8080/api/clients/${username}`);
+  }
   
