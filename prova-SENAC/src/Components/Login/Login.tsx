@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { fetchUser } from "../../Services/ClientService";
 import "./Login.css";
 
 interface LoginProps {
@@ -10,12 +11,27 @@ const Login: React.FC<LoginProps> = ({onLogin}) => {
     const [password, setPassword] = useState("");
 
     const handleLogin = () => {
-       if(username === "usuario" && password === "senha") {
-        onLogin(username, password);
-       } else {
-            alert("Usuário ou senha inválidos");
-       }
+        // Chame a função fetchUser com o nome de usuário (username) como argumento
+        fetchUser(username)
+          .then((response) => {
+            // Verifique se a resposta tem dados e se a senha corresponde
+            if (response.data && response.data[0] && response.data[0].password === password) {
+                console.log("if");
+                console.log(username, password);
+                onLogin(username, password);
+            } else {
+              console.log("else");  
+              console.log(username, password);
+              alert("Usuário ou senha inválidos");
+            }
+          })
+          .catch((error) => {
+            console.log("error");
+            console.error("Erro ao fazer login:", error);
+            alert("Ocorreu um erro ao fazer login. Por favor, tente novamente mais tarde.");
+          });
     };
+    
 
     return (
         <>
