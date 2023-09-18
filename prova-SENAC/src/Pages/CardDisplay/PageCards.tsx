@@ -25,7 +25,7 @@ const PageCards = () => {
               image={TFrios}
               description="Essa é para a turma toda"
               whereToGo="Adicionar"
-              cardTitle="X-Salada"
+              cardTitle="X-Turma"
             />          
           </div>
         </body>      
