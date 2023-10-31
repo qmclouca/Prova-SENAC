@@ -1,58 +1,65 @@
 import React, {useState} from "react";
-import { fetchUser } from "../../Services/ClientService";
+import UsuarioService from "../../Services/UsuarioService";
 import "./Login.css";
 
-interface LoginProps {
-    onLogin: (username: string, password:string) => void;
-}
 
-const Login: React.FC<LoginProps> = ({onLogin}) => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+function Login() {
+    const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
+        cpf: '',
+        senha: ''
+    });
 
-    const handleLogin = () => {
-        // Chame a função fetchUser com o nome de usuário (username) como argumento
-        fetchUser(username)
-          .then((response) => {
-            // Verifique se a resposta tem dados e se a senha corresponde
-            if (response.data && response.data[0] && response.data[0].password === password) {
-                console.log("if");
-                console.log(username, password);
-                onLogin(username, password);
-            } else {
-              console.log("else");  
-              console.log(username, password);
-              alert("Usuário ou senha inválidos");
-            }
-          })
-          .catch((error) => {
-            console.log("error");
-            console.error("Erro ao fazer login:", error);
-            alert("Ocorreu um erro ao fazer login. Por favor, tente novamente mais tarde.");
-          });
-    };
     
+    const handleLogin = (event: React.ChangeEvent<HTMLInputElement>)  => {
+        const { name, value } = event.target;
+        setUsuarioLogin({
+            ...usuarioLogin,
+            [name]: value
+        });
+    };
+
+
+    const handleSubmit = async (event: React.MouseEventHandler<HTMLButtonElement> | any) => {
+        event.preventDefault();
+        try{
+            const response = await UsuarioService.fetchUsuarioLogin(usuarioLogin);
+            if (response.data && response.data.cpf === usuarioLogin.cpf){
+                alert('Login realizado com sucesso!');
+            } else {
+                alert('Erro ao fazer login!');
+            }
+        }catch (error){
+            console.error('Erro ao fazer login: ', error);
+        }
+    };
 
     return (
         <>
         <div className="LoginForm">
             <div className="LoginInputs">
-                <label className="userLabel">Usuário</label>
-                <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}/>
-            
-                <label className="senhaLabel">Senha</label>
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}/>
+                <form>
+                    <div>
+                        <input
+                            type = "text"
+                            name = "cpf"
+                            value = {usuarioLogin.cpf}
+                            onChange = {handleLogin}
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type = "password"
+                            name = "senha"
+                            value = {usuarioLogin.senha}
+                            onChange = {handleLogin}
+                        />
+                    </div>
+                    <button className="buttonMargin" onClick={handleSubmit}>Entrar</button>
+                </form>
             </div>
-            <button className="buttonMargin" onClick={handleLogin}>Entrar</button>
         </div>
         </>
     );
-};
+}
 
 export default Login;
