@@ -9,7 +9,6 @@ interface Item {
     description?: string;
 }
 
-
 const apiClient = axios.create({
   baseURL: BASE_URL,
   headers: {
