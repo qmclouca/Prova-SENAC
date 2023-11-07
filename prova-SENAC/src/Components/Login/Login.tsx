@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import UsuarioService from "../../Services/UsuarioService";
 import "./Login.css";
 
-
 function Login() {
     const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
         cpf: '',
@@ -25,6 +24,8 @@ function Login() {
             const response = await UsuarioService.fetchUsuarioLogin(usuarioLogin);
             if (response.data && response.data.cpf === usuarioLogin.cpf){
                 alert('Login realizado com sucesso!');
+                //criar método de comparação da senha
+                //mandar abrir uma nova janela com o google
             } else {
                 alert('Erro ao fazer login!');
             }
