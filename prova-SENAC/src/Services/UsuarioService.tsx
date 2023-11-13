@@ -1,7 +1,7 @@
 // apiService.js
 import axios, {AxiosResponse} from 'axios';
 
-const BASE_URL = 'http://localhost:8080/Usuario';
+const BASE_URL = 'api/usuario';
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
